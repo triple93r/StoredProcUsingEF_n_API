@@ -21,7 +21,7 @@ namespace StoredProcinAPI.Controllers
         [Route("Create")]
         public IActionResult Create(Patient pvm)
         {
-            var p = _context.Database.ExecuteSqlRaw("sp_Patients @ID, @FirstName,@LastName,@Age, @Adrress ,@PatientType ,@bednum ,@diagnosis, @ttype", new SqlParameter("@ID", pvm.Id), 
+            var p = _context.Database.ExecuteSqlRaw("sp_Patients @ID, @FirstName, @LastName,@Age, @Adrress ,@PatientType ,@bednum ,@diagnosis, @ttype", new SqlParameter("@ID", pvm.Id), 
                 new SqlParameter("@FirstName", pvm.FirstName),
                 new SqlParameter("@LastName", pvm.LastName),
                 new SqlParameter("@Age", pvm.Age),
